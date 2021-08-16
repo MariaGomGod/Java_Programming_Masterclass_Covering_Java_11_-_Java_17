@@ -27,10 +27,11 @@ public class NumberOfDaysInMonth {
         }
 
         switch (month) {
+            // cases 1, 3, 5, 7, 8, 10, 12 (months that have 31 days)
             case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                 return 31;
 
-                // cases 1, 3, 5, 7, 8, 10, 12 (months that have 31 days)
+            // February (case 2 = month 2) could have 28 or 29 days (leap year).
             case 2:
                 if(isLeapYear(year)) {
                     return 29;
@@ -38,13 +39,9 @@ public class NumberOfDaysInMonth {
                     return 28;
                 }
 
-                // February (case 2 = month 2) could have 28 or 29 days (leap year).
-            case 4: case 6: case 9: case 11:
-                return 30;
-
-                //cases 4, 6, 9, 11 (months that have 30 days)
+            //cases 4, 6, 9, 11 (months that have 30 days)
             default:
-                return -1;
+                return 30;
 
         }
     }
