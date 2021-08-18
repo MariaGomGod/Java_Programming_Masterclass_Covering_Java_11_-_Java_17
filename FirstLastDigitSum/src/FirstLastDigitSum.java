@@ -2,9 +2,7 @@ public class FirstLastDigitSum {
 
     public static void main(String[] args) {
        int number = 252;
-       int sum = 0;
-
-       sum = sumFirstAndLastDigit(number);
+       int sum = sumFirstAndLastDigit(number);
         System.out.println("Sum: " + sum);
     }
 
