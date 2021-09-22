@@ -51,7 +51,7 @@ public class Main {
         System.out.println("0 - To shutdown\n" +
                            "1 - To print contacts.\n" +
                            "2 - To add a new contact" +
-                           "3 - To update existing an existing contact.\n" +
+                           "3 - To update an existing contact.\n" +
                            "4 - To remove an item from the list." +
                            "5 - Query if an existing contact exists" +
                            "6 - To print a list of available actions.");
