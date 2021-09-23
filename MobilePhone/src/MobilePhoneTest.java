@@ -94,4 +94,35 @@ public class MobilePhoneTest {
 
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenAContact_whenUpdateANonExistingContact_itIsNotUpdated(){
+        MobilePhone p = new MobilePhone(null);
+
+        boolean result = p.updateContact(new Contact("María", null), new Contact("María", null));
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenAContact_whenUpdateTheOldAndNewContactThatExist_ItIsNotUpdated() {
+        MobilePhone p = new MobilePhone(null);
+        Contact contact = new Contact("María", null);
+        p.addNewContact(contact);
+
+        boolean result = p.updateContact(contact, new Contact("María", "1234"));
+
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenAContact_whenUpdateTheContactThatExistsByANewOne_itIsUpdated() {
+        MobilePhone p = new MobilePhone(null);
+        Contact contact = new Contact("María", null);
+        p.addNewContact(contact);
+
+        boolean result = p.updateContact(contact, new Contact("Pedro", null));
+
+        Assert.assertTrue(result);
+    }
 }
