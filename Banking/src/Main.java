@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        Bank bank = new Bank("National Australia Bank");
+        Bank bank = new Bank("National Australia Bank", new BranchFinder(), new BranchPrinter());
 
         if (bank.addBranch("Adelaide")) {
             System.out.println("Adelaide branch created");
