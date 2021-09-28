@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Album> albums = new ArrayList<>();
+        List<Album> albums = new ArrayList<>();
 
         Album album = new Album("Stormbringer", "Deep Purple");
         album.addSong("Stormbringer", 4.6);
@@ -30,7 +30,7 @@ public class Main {
         album.addSong("Night of the long knives", 5.12);
         albums.add(album);
 
-        LinkedList<Song> playList = new LinkedList<>();
+        List<Song> playList = new ArrayList<>();
         albums.get(0).addToPlayList("You cannot do it right", playList);
         albums.get(0).addToPlayList("Holy man", playList);
         albums.get(0).addToPlayList("Speed king", playList); // does not exist
@@ -43,7 +43,7 @@ public class Main {
         play(playList);
     }
 
-    private static void play(LinkedList<Song> playList) {
+    private static void play(List<Song> playList) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean forward = true;
@@ -138,10 +138,10 @@ public class Main {
                             "3 - to replay the current song\n" +
                             "4 - list songs in the playlist\n" +
                             "5 - print available actions\n" +
-                            "6 - delete current son fro the playlist");
+                            "6 - delete current son from the playlist");
     }
 
-    private static void printList(LinkedList<Song> playList) {
+    private static void printList(List<Song> playList) {
         Iterator<Song> iterator = playList.iterator();
         System.out.println("=====================================");
         while (iterator.hasNext()) {
